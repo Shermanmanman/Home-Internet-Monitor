@@ -1,6 +1,8 @@
 # Home Internet Monitor
 _Monitor your home internet speeds in a (somewhat) simple way!_
 
+![image](https://github.com/Shermanmanman/Home-Internet-Monitor/assets/67762501/0db07bd9-e7e7-4d90-89f1-680248195485)
+
 Are you curious about how well your internet connection is working? Do you think that you could be getting less-than-advertised speeds from your ISP and want a way to prove it? Well, maybe this utility will help.
 
 Here's how this works:
@@ -27,15 +29,16 @@ I've been running this on a Raspberry Pi 4B, but this can run just about anywher
 ```
 
 3. Setup MySQL or MariaDB
-   - Install MySQL or MariaDB:
-_Note: As of this writing, I am running MariaDB 10.5.23-MariaDB-0+deb11u1 on my Raspberry Pi, but there isn't a version dependency, so pick the latest._
+   - Install MySQL or MariaDB.
+     _Note: As of this writing, I am running MariaDB 10.5.23-MariaDB-0+deb11u1 on my Raspberry Pi, but there isn't a version dependency, so pick the latest._
 ```
 ~$ [apt/yum/dnf] install mysql-server
 # -OR-
 ~$ [apt/yum/dnf] install mariadb-server
 ```
-    - Use the `stMetrics_tableSetup.sql` file to create the needed database & table:
-_Open and modify the file first before running this as there is a generic password set in the file for the database user for reference purposes_
+  - Use the `stMetrics_tableSetup.sql` file to create the needed database & table.
+> [!IMPORTANT]
+> Open and modify the file first before running this as there is a generic password set in the file for the database user for reference purposes.
 ```
 mysql> source /path/to/stMetrics_tableSetup.sql
 ```
