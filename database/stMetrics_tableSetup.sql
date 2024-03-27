@@ -1,4 +1,7 @@
-Create Table: CREATE TABLE `results` (
+CREATE USER `metric`@`localhost` IDENTIFIED BY "P@ssw0rd1234";
+CREATE DATABASE `stMetrics`;
+USE `stMetrics`;
+CREATE TABLE `results` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `server` varchar(40) DEFAULT NULL,
   `url` varchar(120) DEFAULT NULL,
@@ -9,4 +12,6 @@ Create Table: CREATE TABLE `results` (
   `lon` decimal(7,4) DEFAULT NULL,
   `timestamp` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=85650 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci
+) ENGINE=InnoDB AUTO_INCREMENT=85650 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+GRANT ALL PRIVILEGES ON `stMetrics`.* TO `metric`@`localhost`;
+
